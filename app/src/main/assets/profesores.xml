@@ -1,0 +1,33 @@
+<profesores>
+    <profesor>
+        <nombre>Pepe</nombre>
+        <horasLectivas>18</horasLectivas>
+        <mayor55>false</mayor55>
+    </profesor>
+    <profesor dni="1234" movil="890" cp="41008">
+        <nombre>Juana</nombre>
+        <horasLectivas>18</horasLectivas>
+        <mayor55>false</mayor55>
+    </profesor>
+    <profesor>
+        <nombre>Rosa</nombre>
+        <horasLectivas>18</horasLectivas>
+        <mayor55>true</mayor55>
+    </profesor>
+    <profesor>
+        <nombre>Enrique</nombre>
+        <horasLectivas>13</horasLectivas>
+        <mayor55>false</mayor55>
+        <alumnos>
+            <alumno nombre="Julian" apellido="Garrido" edad="21">
+                <notaSGE>10</notaSGE>
+                <notaHLC>8</notaHLC>
+                <notaPMSM>7</notaPMSM>
+                <notaADAT>9</notaADAT>
+                <notaEIE>7</notaEIE>
+                <notaPSP>6</notaPSP>
+                <notaDI>9</notaDI>
+            </alumno>
+        </alumnos>
+    </profesor>
+</profesores>

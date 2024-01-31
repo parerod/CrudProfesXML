@@ -16,7 +16,7 @@ class ProfesorHandler : DefaultHandler() {
     var profes: MutableList<Profesor> = mutableListOf()
 
     var alumno : Alumno? = null
-    var alumnos : MutableList<Alumno> = mutableListOf()
+    /*var alumnos : MutableList<Alumno> = mutableListOf()*/
 
     @Throws(SAXException::class)
     override fun startDocument() {
@@ -31,9 +31,11 @@ class ProfesorHandler : DefaultHandler() {
         if (nombre == "profesor") {
             profesor = Profesor()
             //Poner todos los atributos de la entidad del XML
-            profesor?.dni = attributes.getValue("nombre")
-            profesor?.movil = attributes.getValue("autor")
-            profesor?.cp = attributes.getValue("autor")
+            if(attributes.getValue("dni") != null){
+                profesor?.dni = attributes.getValue("dni")
+            }
+            profesor?.movil = attributes.getValue("movil")
+            profesor?.cp = attributes.getValue("cp")
         }else if (nombre == "alumno") {
             alumno = Alumno()
 
@@ -67,7 +69,7 @@ class ProfesorHandler : DefaultHandler() {
             "notaDI" -> notas.add(cadena.toString().toInt())
             "alumno" -> {
                 alumno?.calcularMedia(notas)
-                alumno?.let { alumnos.add(it) }
+                alumno?.let { profesor?.alumnos?.alumnos?.add(it) }
             }
         }
 

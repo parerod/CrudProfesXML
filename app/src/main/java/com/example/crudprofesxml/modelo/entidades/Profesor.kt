@@ -14,13 +14,13 @@ data class Profesores(
 @Root(name = "profesor")
 data class Profesor(
     @field:Attribute(name = "dni", required = false)
-    var dni: String = "",
+    var dni: String? = "",
 
     @field:Attribute(name = "movil", required = false)
-    var movil: String = "",
+    var movil: String? = "",
 
     @field:Attribute(name = "cp", required = false)
-    var cp: String = "",
+    var cp: String? = "",
 
     @field:Element(name = "nombre")
     var nombre: String = "",
@@ -30,7 +30,12 @@ data class Profesor(
 
     @field:Element(name = "mayor55")
     var mayor55: Boolean = false,
-) {
+
+    @field:Element(name = "alumnos", required = false)
+    var alumnos: Alumnos = Alumnos()
+
+
+    ) {
 
 
 }
